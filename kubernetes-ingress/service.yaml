@@ -3,10 +3,11 @@ kind: Service
 metadata:
   name: python-app-svc  
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
   - port: 5000
     targetPort: 5000
-    nodePort: 30002
+    protocol: TCP
+    nodePort: 30033
   selector:
     app: python-app
